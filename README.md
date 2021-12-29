@@ -26,7 +26,7 @@ For a editable table, policy tag and row access policy can still keep the result
 - Why not UDF? Limited to no table result.
 - Why not procedure: Heavy and no table result.
 
-Only Table Function can give us ABAC along with context. A table function, also called a table-valued function (TVF), is a user-defined function that returns a table. You can use a table function anywhere that you can use a table. Table functions behave similarly to views, but a table function can take parameters.(https://cloud.google.com/bigquery/docs/reference/standard-sql/table-functions)
+Only Table Function can give us ABAC along with context. A table function, also called a table-valued function (TVF), is a user-defined function that returns a table. You can use a table function anywhere that you can use a table. Table functions behave similarly to views, but a table function can take parameters. Authorized functions let you share query results with particular users or groups without giving those users or groups access to the underlying tables. (https://cloud.google.com/bigquery/docs/reference/standard-sql/table-functions)
 
 Actually there is a SQL rewriting method to implement ABAC. This method is general to any SQL data sources, but has overhead on performance and has a potential security problem.
 
