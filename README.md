@@ -8,7 +8,9 @@ When an identity calls a Google Cloud API, BigQuery requires that the identity h
 To grant access to a BigQuery resource, assign one or more roles to a user, group, or service account. You can grant access at the following BigQuery resource levels:
 
 1.organization or Google Cloud project level
+
 2.dataset level
+
 3.table or view level
 
 # Why Attribute-based access control (ABAC) (https://en.wikipedia.org/wiki/Attribute-based_access_control)? 
@@ -24,9 +26,10 @@ For a editable table, policy tag and row access policy can still keep the result
 - Why not Session: Early-stage.
 - Why not Authorized view? No context possible.
 - Why not UDF? Limited to no table result.
-- Why not procedure: Heavy and no table result.
 
-Only Table Function can give us ABAC along with context. A table function, also called a table-valued function (TVF), is a user-defined function that returns a table. You can use a table function anywhere that you can use a table. Table functions behave similarly to views, but a table function can take parameters. Authorized functions let you share query results with particular users or groups without giving those users or groups access to the underlying tables. (https://cloud.google.com/bigquery/docs/reference/standard-sql/table-functions)
+ A Procedure will be used at present for it is the most flexible. But its usage is different from that of a table so it is not convenient for a SQL user.
+
+Later Table Function instead of Procedure will be used for Table Function is a light and convenient way. A table function, also called a table-valued function (TVF), is a user-defined function that returns a table. You can use a table function anywhere that you can use a table. Table functions behave similarly to views, but a table function can take parameters. Authorized functions let you share query results with particular users or groups without giving those users or groups access to the underlying tables. (https://cloud.google.com/bigquery/docs/reference/standard-sql/table-functions)
 
 Actually there is a SQL rewriting method to implement ABAC. This method is general to any SQL data sources, but has overhead on performance and has a potential security problem.
 
@@ -39,8 +42,9 @@ For convenience, it is good to store the attributes into BigQuery tables.
 # Why not Commercial Solution?
 Why not vendors’ solutions? They are general to CRUD. They are general to all kinds of data sources. Instead, we focus on specific data sources, specific use situations (Analytics).
 
-Weakness: No UI.
-Advantages: 
+## Weakness: No UI.
+
+## Advantages: 
 - Native solution.
 - Light-weight.
 - Integration possible, but not required.
