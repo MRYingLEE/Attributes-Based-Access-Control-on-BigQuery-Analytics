@@ -1,0 +1,6 @@
+Table_Name,Col_Name,PII,Regions
+Main,Column_1865,false,HK
+Main,Column_work,false,UK
+Main,ID,false,HK;UK
+Main,Region,false,HK;UK
+Main,email,true,HK;UK
