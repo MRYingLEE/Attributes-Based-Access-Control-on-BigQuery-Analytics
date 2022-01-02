@@ -1,7 +1,7 @@
 # Attributes-Based-Access-Control-on-BigQuery-Analytics
 
 
-# BigQuery Built-in Access Control: Role Based (https://cloud.google.com/bigquery/docs/access-control)
+# BigQuery Built-in Access Control: Role-Based (https://cloud.google.com/bigquery/docs/access-control)
 
 When an identity calls a Google Cloud API, BigQuery requires that the identity has the appropriate permissions to use the resource. You can grant permissions by granting roles to a user, a group, or a service account.
 
@@ -17,9 +17,8 @@ To grant access to a BigQuery resource, assign one or more roles to a user, grou
 Historically, access control models have included mandatory access control (MAC), discretionary access control (DAC), and more recently role-based access control (RBAC). These access control models are user-centric and do not take into account additional parameters such as resource information, the relationship between the user (the requesting entity) and the resource, and dynamic information e.g. time of the day or user IP. ABAC tries to address this by defining access control based on attributes which describe the requesting entity (the user), the targeted object or resource, the desired action (view, edit, delete...), and environmental or contextual information. This is why access control is said to be attribute-based.
 
 # Why Native Instead of Proxy Based SQL Rewriting?
-BigQuery has many features to support ABAC, such as authorized view, policy tag (column level access control), row access policy (row level) and table function. And luckily these features can coexist. 
-
-For a editable table, policy tag and row access policy can still keep the result editable. Authorized view and table function are flexible methods to build ABAC.But there is a born weakness, the result is read-only. For we only consider analytics situation, this weakness is acceptable. 
+BigQuery has many features to support ABAC, such as authorized view, policy tag (column-level access control), row access policy (row-level), table function, and procedure. And luckily these features can coexist.
+For an editable table, policy tag and row access policy can still keep the result editable. Authorized view, table function, and procedure are flexible methods to build ABAC. But there is a born weakness, the result is read-only. For we only consider analytics situations, this weakness is acceptable. 
 
 - Why not policy tag: No ABAC possible due to technology limits (only one policy tag is allowed for a column). It’s heavy too.
 - Why not Row ACCESS POLICY? No ABAC is possible due to technology limits (no UDF and other data sources are allowed). It’s heavy too.
