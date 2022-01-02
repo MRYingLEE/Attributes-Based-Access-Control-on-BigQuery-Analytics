@@ -49,4 +49,4 @@ Advantages:
 
 # Progress
 Some POC tests have been done. The code and the test data have been uploaded.
-![Contexts](contexts.jpg)
+![Contexts](Contexts.png)
