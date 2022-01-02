@@ -50,7 +50,8 @@ Advantages:
 # Progress
 Some POC tests have been done. The code and the test data have been uploaded.
 
-The original data:
+The original data:<br>
 ![original data](data.png)
 
+The data with contexts:<br>
 ![Contexts](Contexts.png)
