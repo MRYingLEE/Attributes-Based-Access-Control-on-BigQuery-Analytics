@@ -50,8 +50,9 @@ Advantages:
 # Progress
 Some POC tests have been done. The code and the test data have been uploaded.
 
-The original data:<br>
+
+## The original data:
 ![original data](data.png)
 
-The data with contexts:<br>
+## The data with contexts (Column Level and Row Level Access Control at the same time):
 ![Contexts](Contexts.png)
