@@ -103,4 +103,4 @@ END;
 ![original data](data.png)
 
 ## The data with contexts (Column Level and Row Level Access Control at the same time):
-![Contexts](Contexts.png)
+![Contexts](with PII or not.png)
