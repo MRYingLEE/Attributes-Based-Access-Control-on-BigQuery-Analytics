@@ -23,12 +23,10 @@ For an editable table, policy tag and row access policy can still keep the resul
 - Why not policy tag: No ABAC possible due to technology limits (only one policy tag is allowed for a column). It’s heavy too.
 - Why not Row ACCESS POLICY? No ABAC is possible due to technology limits (no UDF and other data sources are allowed). It’s heavy too.
 - Why not Session: Early-stage.
-- Why not Authorized view? No context possible.
 - Why not UDF? Limited to no table result.
+- Why Authorized view? Regarding the same table, different views can be created for different context.
 
- A Procedure will be used at present for it is the most flexible. But its usage is different from that of a table so it is not convenient for a SQL user.
-
-Later Table Function instead of Procedure will be used for Table Function is a light and convenient way. A table function, also called a table-valued function (TVF), is a user-defined function that returns a table. You can use a table function anywhere that you can use a table. Table functions behave similarly to views, but a table function can take parameters. Authorized functions let you share query results with particular users or groups without giving those users or groups access to the underlying tables. (https://cloud.google.com/bigquery/docs/reference/standard-sql/table-functions)
+ A Procedure will be used to create corresponding authorized views at fly. 
 
 Actually there is a SQL rewriting method to implement ABAC. This method is general to any SQL data sources, but has overhead on performance and has a potential security problem.
 
@@ -102,5 +100,5 @@ END;
 ## The original data:
 ![original data](data.png)
 
-## The data with contexts (Column Level and Row Level Access Control at the same time):
+## The data with contexts, actually different authorized views with the same view name while different dataset name:
 ![Contexts](./with_PII_or_not.png)
